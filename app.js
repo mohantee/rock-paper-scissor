@@ -2,7 +2,7 @@ const playerScore = document.getElementById('human-score');
 const computerScore = document.getElementById('computer-score');
 const choiceRock = document.getElementById('choice-rock');
 const choicePaper = document.getElementById('choice-paper')
-const choiceScissor = document.getElementById('choice-scissor');
+const choiceScissors = document.getElementById('choice-scissors');
 const result = document.getElementById('result');
 const choices = Array.from(document.querySelectorAll('.choice'));
 
@@ -18,16 +18,16 @@ const getComputerChoice = () => {
         return 'PAPER';
     }
     if (chance >= 0.67 && chance <= 1) {
-        return 'SCISSOR';
+        return 'SCISSORS';
     }
 };
 
 const startGame = (playerChoice) => {
     const computerChoice = getComputerChoice();
 
-    if (playerChoice === 'ROCK' && computerChoice == 'SCISSOR'
+    if (playerChoice === 'ROCK' && computerChoice == 'SCISSORS'
         || playerChoice === 'PAPER' && computerChoice === 'ROCK'
-        || playerChoice === 'SCISSOR' && computerChoice === 'PAPER') {
+        || playerChoice === 'SCISSORS' && computerChoice === 'PAPER') {
 
         playerCount += 1;
 
@@ -35,12 +35,12 @@ const startGame = (playerChoice) => {
             result.textContent = 'Game over! You win!';
         }
         else {
-            result.textContent = 'Player wins!';
+            result.textContent = `Player wins! ${playerChoice} beats ${computerChoice}`;
         }
     }
-    else if (playerChoice === 'SCISSOR' && computerChoice == 'ROCK'
+    else if (playerChoice === 'SCISSORS' && computerChoice == 'ROCK'
         || playerChoice === 'ROCK' && computerChoice === 'PAPER'
-        || playerChoice === 'PAPER' && computerChoice === 'SCISSOR') {
+        || playerChoice === 'PAPER' && computerChoice === 'SCISSORS') {
 
         computerCount += 1;
 
@@ -48,7 +48,7 @@ const startGame = (playerChoice) => {
             result.textContent = 'Game over! Computer wins!';
         }
         else {
-            result.textContent = 'Computer Wins!';
+            result.textContent = `Computer Wins! ${computerChoice} beats ${playerChoice}`;
         }
     }
     else {
@@ -62,6 +62,7 @@ const startGame = (playerChoice) => {
 choices.forEach((choice) => 
     choice.addEventListener('click', () => {
         if (playerCount >= 5 || computerCount >= 5) {
+            alert('Game over! Refresh the page to play again...');
             return;
         }
         startGame(choice.dataset.choice);
