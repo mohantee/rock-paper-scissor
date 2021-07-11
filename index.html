@@ -4,12 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <script src="assets/scripts/app.js" defer></script>
     <title>Rock, Paper, Scissors</title>
   </head>
   <body>
     <h1 id="title">Rock, Paper, And Scissors</h1>
+    <p id="win-condition-text">First to 5 wins!</p>
     <div id="scoreboard">
       <div id="human-score" class="score-count">0</div>
       <div>-</div>
@@ -18,24 +19,15 @@
     <div id="result"></div>
     <div id="choices">
       <div id="choice-rock" class="choice" data-choice="ROCK">
-        <img
-          src="https://tarekvisch.github.io/rock-paper-scissors/images/rock.png"
-          alt="rock choice"
-        />
+        <img src="assets/images/rock.png" alt="rock choice" />
         <p class="choice-description">Rock</p>
       </div>
       <div id="choice-paper" class="choice" data-choice="PAPER">
-        <img
-          src="https://tarekvisch.github.io/rock-paper-scissors/images/paper.png"
-          alt="paper choice"
-        />
+        <img src="assets/images/paper.png" alt="paper choice" />
         <p class="choice-description">Paper</p>
       </div>
       <div id="choice-scissor" class="choice" data-choice="SCISSORS">
-        <img
-          src="https://tarekvisch.github.io/rock-paper-scissors/images/scissors.png"
-          alt="scissor choice"
-        />
+        <img src="assets/images/scissors.png" alt="scissor choice" />
         <p class="choice-description">Scissors</p>
       </div>
     </div>

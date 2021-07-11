@@ -35,7 +35,7 @@ const startGame = (playerChoice) => {
             result.textContent = 'Game over! You win!';
         }
         else {
-            result.textContent = `Player wins! ${playerChoice} beats ${computerChoice}`;
+            result.textContent = `Player wins! Your choice ${playerChoice} beats Computer choice ${computerChoice}`;
         }
     }
     else if (playerChoice === 'SCISSORS' && computerChoice == 'ROCK'
@@ -48,7 +48,7 @@ const startGame = (playerChoice) => {
             result.textContent = 'Game over! Computer wins!';
         }
         else {
-            result.textContent = `Computer Wins! ${computerChoice} beats ${playerChoice}`;
+            result.textContent = `Computer Wins! Computer choice ${computerChoice} beats your choice ${playerChoice}`;
         }
     }
     else {
